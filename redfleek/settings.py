@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "movie",
     "news",
     "accounts",
+    "star_ratings",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,5 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = "loginaccount"
+
+STAR_RATINGS_ANONYMOUS = True

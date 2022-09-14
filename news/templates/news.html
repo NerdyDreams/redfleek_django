@@ -1,5 +1,39 @@
 {% extends 'base.html' %} {% block content %} {% for news in newss %}
-<div class="card mb-3">
+<!--Section: News of the day-->
+
+<div class="row gx-5">
+  <div class="col-md-6 mb-4">
+    <div
+      class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
+      data-mdb-ripple-color="light"
+    >
+      <img src="{{news.image.url}}" class="img-fluid" />
+      <a href="#!">
+        <div
+          class="mask"
+          style="background-color: rgba(251, 251, 251, 0.15)"
+        ></div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    {% if news.date == today %}
+    <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3"
+      >This just in</span
+    >
+    {% endif %}
+    <h4><strong>{{ news.headline }}</strong></h4>
+    <div class="post_body">
+      {{ news.body|safe|truncatewords:"100"|linebreaks }}
+      <a href="{% url 'newsItem' news.id %}">Read more</a>
+      {{news.date}}
+    </div>
+  </div>
+</div>
+<!--Section: News of the day-->
+{% endfor %} {% endblock content %}
+
+<!-- <div class="card mb-3">
   <div class="row g-0">
     <div>
       <div class="card-body">
@@ -11,5 +45,35 @@
       </div>
     </div>
   </div>
-</div>
-{% endfor %} {% endblock content %}
+</div> -->
+
+<!-- {% with text=news.body %} {% if text|wordcount > 56 %}
+    <p class="half-content" id="half-{{ post.pk }}">
+      {{text|safe|linebreaks|truncatewords:50}}<a
+        data-id="{{ post.pk }}"
+        href="javascript:void();"
+        class="show-hide-btn"
+        ><br />Read more</a
+      >
+    </p>
+    {% else %}
+    <p class="full-content" id="full-{{post.pk }}" style="display: none">
+      {{ text|safe|linebreaks }}<a
+        data-id="{{ post.pk}}"
+        href="javascript:void();"
+        class="show-hide-btn"
+        >Read less</a
+      >
+    </p>
+    <p>{{ text|safe|linebreaks }}</p>
+    {% endif %} {% endwith %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".show-hide-btn").click(function () {
+          var id = $(this).data("id");
+          $("#half-" + id).toggle(); //hide/show..
+          $("#full-" + id).toggle();
+        });
+      });
+    </script> -->

@@ -30,6 +30,7 @@ urlpatterns = [
     path("news/", include("news.urls")),
     path("movie/", include("movie.urls")),
     path("accounts/", include("accounts.urls")),
+    path("ratings/", include("star_ratings.urls", namespace="ratings")),
 ]
 
 # to serve  stored image👇

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Redfleek</title>
@@ -18,8 +19,18 @@ bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       content="width=device-width,
 initial-scale=1"
     />
+    <link
+      rel="stylesheet"
+      href="{% static 'star-ratings/css/star-ratings.css' %}"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"
+    ></script>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}" />
   </head>
   <body>
+    <!-- You can alternatively load the minified version -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
       <div class="container">
         <a class="navbar-brand text-danger fw-bolder" href="{% url 'home'%}">

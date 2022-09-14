@@ -6,4 +6,25 @@ urlpatterns = [
     path("<int:movie_id>/create", views.createreview, name="createreview"),
     path("review/<int:review_id>", views.updatereview, name="updatereview"),
     path("review/<int:review_id>/delete", views.deletereview, name="deletereview"),
+    path("<int:movie_id>/profreview", views.profreview, name="profreview"),
+    path(
+        "<int:movie_id>/createprofreview",
+        views.createprofreview,
+        name="createprofreview",
+    ),
+    path(
+        "profreview/<int:profreview_id>",
+        views.updateprofreview,
+        name="updateprofreview",
+    ),
+    path(
+        "profreview/<int:profreview_id>/delete",
+        views.deleteprofreview,
+        name="deleteprofreview",
+    ),
+    path(
+        "<int:movie_id>/become_redreviewer",
+        views.becomeredreviewer,
+        name="becomeredreviewer",
+    ),
 ]

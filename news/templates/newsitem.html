@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div class="card mb-3">
+  <img class="card-img-top" src="{{news.image.url}}" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">{{news.title}}</h5>
+    <p class="card-text">{{news.body}}</p>
+    <a class="btn btn-primary me-2" href="{% url 'news' %}"
+      >Back to News List</a
+    >
+  </div>
+</div>
+{% endblock content %}
