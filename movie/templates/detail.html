@@ -27,7 +27,7 @@
             Post a RedReview
           </a>
           {% endif %} {% endif %} {% if not user.is_staff %}
-          <a href="{% url 'profreview' movie.id %}" class="Link">
+          <a href="{% url 'becomeredreviewer'}" class="Link">
             Become a RedReviewer!
           </a>
           {% endif %}
