@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Movie, Review, ProfReview
 from django.shortcuts import get_object_or_404, redirect
-from .forms import ReviewForm, profReviewForm
+from .forms import ReviewForm, profReviewForm, becomeredreviewerform
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 
@@ -21,7 +21,11 @@ def home(request):
 
 
 def about(request):
-    return HttpResponse("<h1>Welcome to About Page</h1>")
+    return render(request, "about.html")
+
+
+def contact(request):
+    return render(request, "contact.html")
 
 
 def signup(request):
@@ -135,7 +139,7 @@ def createprofreview(request, movie_id):
 def updateprofreview(request, profreview_id):
     profreview = get_object_or_404(ProfReview, pk=profreview_id, user=request.user)
     if request.method == "GET":
-        form = ReviewForm(instance=profreview)
+        form = profReviewForm(instance=profreview)
         return render(
             request, "updateprofreview.html", {"review": profreview, "form": form}
         )
@@ -162,4 +166,27 @@ def deleteprofreview(request, profreview_id):
 
 
 def becomeredreviewer(request):
-    return render(request, "becomeredreviewer.html")
+    if request.method == "GET":
+        return render(
+            request, "becomeredreviewerform.html", {"form": becomeredreviewerform()}
+        )
+    else:
+        try:
+            form = becomeredreviewerform(request.POST)
+            data = request.POST.get("name")
+            form.save(commit=True)
+            return render(request, "becomeredreviewerthanks.html", {"name": data})
+            # if "var_name" in request.POST:
+            #     # context is the name of dict that we gonna pass to our template
+            #     #'var_name' derives from the template
+            #     context["name"] = request.POST["var_name"]
+        except ValueError:
+            return render(
+                request,
+                "becomeredreviewerform.html",
+                {"form": becomeredreviewerform(), "error": "bad data passed in"},
+            )
+
+
+# def becomeredreviewer(request):
+#     # context = {}
