@@ -27,9 +27,5 @@ urlpatterns = [
         views.becomeredreviewer,
         name="becomeredreviewer",
     ),
-    # path(
-    #     "becomeredreviewer",
-    #     views.becomeredreviewer,
-    #     name="becomeredreviewer",
-    # ),
+    #  path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
 ]
