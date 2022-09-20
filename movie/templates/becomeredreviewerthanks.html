@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Thank You, {{name}}</h1>
+  <p class="lead">
+    We appreciate your interest in joining our review team. We will get back to
+    you pronto!
+  </p>
+  <hr class="my-4" />
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button"
+      >Go Home</a
+    >
+  </p>
+</div>
+
+{% endblock content %}

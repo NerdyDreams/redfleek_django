@@ -1,5 +1,7 @@
+import email
+from email.message import EmailMessage
 from django.forms import ModelForm, Textarea
-from .models import Review, ProfReview
+from .models import Review, ProfReview, Reviewer_requests
 
 
 class ReviewForm(ModelForm):
@@ -29,4 +31,19 @@ class profReviewForm(ModelForm):
         labels = {"watchAgain": ("Watch Again")}
         widgets = {
             "text": Textarea(attrs={"rows": 8}),
+        }
+
+
+class becomeredreviewerform(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ModelForm, self).__init__(*args, **kwargs)
+        self.fields["name"].widget.attrs.update({"class": "form-control"})
+        self.fields["email"].widget.attrs.update({"class": "form-control"})
+
+    class Meta:
+        model = Reviewer_requests
+        fields = ["name", "email"]
+        widgets = {
+            "text": Textarea(attrs={"rows": 4}),
+            "email": Textarea(attrs={"rows": 1}),
         }

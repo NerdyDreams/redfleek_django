@@ -34,9 +34,20 @@ class ProfReview(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     watchAgain = models.BooleanField()
 
+    def __str__(self):
+        return self.text
+
     # def save(self, *args, **kwargs):
     #     if not self.pk and ProfReview.objects.exists():
     #         # if you'll not check for self.pk
     #         # then error will also raised in update of exists model
     #         raise ValidationError("There can be only one RedReview")
     #     return super(ProfReview, self).save(*args, **kwargs)
+
+
+class Reviewer_requests(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name

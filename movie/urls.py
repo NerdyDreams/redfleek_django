@@ -23,8 +23,13 @@ urlpatterns = [
         name="deleteprofreview",
     ),
     path(
-        "<int:movie_id>/become_redreviewer",
+        "becomeredreviewerform",
         views.becomeredreviewer,
         name="becomeredreviewer",
     ),
+    # path(
+    #     "becomeredreviewer",
+    #     views.becomeredreviewer,
+    #     name="becomeredreviewer",
+    # ),
 ]

@@ -1,0 +1,202 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<script
+  src="https://kit.fontawesome.com/6b78d14714.js"
+  crossorigin="anonymous"
+></script>
+<div style="background-color: #ffffff">
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="display-4 text-danger">REDFLEEK</h1>
+        <p class="lead text-muted mb-0">We own video!</p>
+        <p class="lead text-muted">
+          We are a small team of dedicated entertaineurs! bringing you the best
+          gossips. We are concerned about your movie tastebuds. So enjoy!
+        </p>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="{% static 'images/illus.jpg' %}" alt="" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container py-5">
+    <div class="row mb-4">
+      <div class="col-lg-5">
+        <h2 class="display-4 font-weight-light">Our reviewers</h2>
+        <p class="font-italic text-muted">
+          Want to be a Red reviewer?
+          <a href="{% url 'becomeredreviewer' %}">Click here</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            src="{% static 'images/Lucy.png' %}"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">Lucy</h5>
+          <span class="small text-uppercase text-muted">Red Reviewer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            src="{% static 'images/blessing.png' %}"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">Ije</h5>
+          <span class="small text-uppercase text-muted">Red Reviewer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            src="{% static 'images/Mayowa.PNG' %}"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">Mayowa</h5>
+          <span class="small text-uppercase text-muted">Red Reviewer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            src="{% static 'images/zain.png' %}"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">Zain</h5>
+          <span class="small text-uppercase text-muted">Red Reviewer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Team Item -->
+      <div class="col-xl-3 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4">
+          <img
+            src="{% static 'images/Monica.png' %}"
+            alt=""
+            width="100"
+            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+          />
+          <h5 class="mb-0">Monica</h5>
+          <span class="small text-uppercase text-muted">Red Reviewer</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End-->
+    </div>
+  </div>
+</div>
+{% endblock content %}
